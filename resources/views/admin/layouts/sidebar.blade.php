@@ -19,7 +19,7 @@
                with font-awesome or any other icon font library -->
         
           <li class="nav-item">
-            <a href="/" class="nav-link">
+            <a href="/admin/dashboard" class="nav-link {{ Request::is('/admin/dashboard') ? 'active' : '' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard
@@ -29,17 +29,17 @@
           </li>
 
  
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item {{ Request::is('/admin/dashboard') ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ Request::is('/admin/master*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
                 Data Master
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview" style="display: {{ Request::is('/admin/master*') ? 'block' : 'none' }};" >
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="/admin/master/anggota" class="nav-link{{ Request::is('/admin/master/anggota') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Anggota</p>
                 </a>
@@ -76,7 +76,7 @@
 
 
           <li class="nav-item">
-            <a href="/admin/user" class="nav-link">
+            <a href="/admin/user" class="nav-link {{ Request::is('/admin/user') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 User

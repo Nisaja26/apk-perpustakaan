@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAnggotaController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminUserController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,8 @@ Route::get('/logout', [AdminAuthController::class, 'logout'])->middleware('auth'
         return view('admin.layouts.wrapper', $data);
 
     });
+    
+    Route::resource('/master/anggota', AdminAnggotaController::class);
     Route::resource('/user', AdminUserController::class);
 
 });
